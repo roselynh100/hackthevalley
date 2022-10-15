@@ -64,13 +64,13 @@ buck-out
 .gradle
 local.properties
 *.iml
-/android/
+# /android/
 
 # Node
 node_modules
 *.log
 .nvm
-package-lock.json
+# package-lock.json
 
 # OS X
 .DS_Store
