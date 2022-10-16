@@ -4,7 +4,47 @@
             "outputFile": "com.hackthevalley.app-mergeDebugResources-27:/values/values.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\minec\\.gradle\\caches\\transforms-3\\3e0d478508575b75c79938eb5fb0fb04\\transformed\\jetified-startup-runtime-1.0.0\\res\\values\\values.xml",
+=======
+                    "source": "C:\\Users\\huynh\\Documents\\Side_Projects\\hackthevalley\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endColumns": "50",
+                        "endOffsets": "63"
+                    },
+                    "to": {
+                        "startLines": "322",
+                        "startColumns": "4",
+                        "startOffsets": "20689",
+                        "endColumns": "50",
+                        "endOffsets": "20735"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\huynh\\Documents\\Side_Projects\\hackthevalley\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "273"
+                    },
+                    "to": {
+                        "startLines": "392",
+                        "startColumns": "4",
+                        "startOffsets": "27199",
+                        "endLines": "395",
+                        "endColumns": "12",
+                        "endOffsets": "27377"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\huynh\\.gradle\\caches\\transforms-3\\3e0d478508575b75c79938eb5fb0fb04\\transformed\\jetified-startup-runtime-1.0.0\\res\\values\\values.xml",
+>>>>>>> master
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
