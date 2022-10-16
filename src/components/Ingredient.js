@@ -15,7 +15,7 @@ const Ingredient = (props) => {
       if (ret.quantity) setQuantity(ret.quantity)
     })
     .catch(err => {
-      // console.warn(err.message)
+      // console.warn(err.message)R
     })
 
   function fadeInAndOut() {

@@ -1,8 +1,10 @@
 
 import React, { useState, useContext } from 'react'
-import { Modal, Text, StyleSheet, Pressable, View } from 'react-native'
+import { Image, Modal, Text, StyleSheet, Pressable, View } from 'react-native'
 import Recipes from '../data/recipes.json'
+import PageHeader from '../components/PageHeader'
 import { rollCurrency } from '../components/context'
+import storage from '../data/storage'
 
 const recipes = Recipes
 
@@ -14,11 +16,16 @@ function Roll() {
   const [modalVisible, setModalVisible] = useState(false)
   const [recipeNumber, setRecipeNumber] = useState(0)
   const [rollCur, setRollCur] = useContext(rollCurrency)
-  const [disabled, setDisabled] = useState(false)
 
   function choose() {
     if (rollCur > 0) {
       number = random()
+      storage.save({
+        key: recipes.recipes[number]?.name,
+        data: {
+          unlocked: true
+        }
+      })
       return number
     } else {
       return 0
@@ -34,27 +41,28 @@ function Roll() {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Win a new recipe!</Text>
-      <View style={styles.centeredView}>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text>You received the recipe for {recipes.recipes[recipeNumber]}!</Text>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
-              >
-                <Text style={styles.textStyle}>Sweet!</Text>
-              </Pressable>
-            </View>
+    <View>
+      {/* <Text>Win a new recipe!</Text> */}
+      <PageHeader title='Roll' />
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text>You received the recipe for {recipes.recipes[recipeNumber]?.name}!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Sweet!</Text>
+            </Pressable>
           </View>
-        </Modal>
-      </View>
+        </View>
+      </Modal>
+      <Image source={{uri: 'https://www.pngkey.com/png/full/277-2775656_splash-gumball-machine-regular-gumball-machine-clipart-free.png'}}
+        style={styles.image} />
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => {setRecipeNumber(choose()), setModalVisible(visible()), rollCur>0 ? setRollCur(rollCur-1) : null}}
@@ -94,6 +102,12 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5
   },
+  image: {
+    height: 300,
+    width: 150,
+    margin: 20,
+    left: '27%'
+  },
   button: {
     borderRadius: 20,
     padding: 10,
@@ -101,10 +115,11 @@ const styles = StyleSheet.create({
   },
   buttonOpen: {
     backgroundColor: "purple",
-    marginBottom: 100
+    marginBottom: 50
   },
   buttonClose: {
     backgroundColor: "#2196F3",
+    marginTop: 20
   },
   textStyle: {
     color: "white",

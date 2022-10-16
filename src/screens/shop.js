@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, ScrollView, Text, View } from 'react-native'
+import PageHeader from '../components/PageHeader'
 import Ingredient from '../components/Ingredient'
 import Ingredients from '../data/ingredients.json'
 
@@ -13,7 +14,8 @@ const Shop = () => {
 
   return (
     <View>
-      <Text>Sale! Sale! We have produce and custom tasks!</Text>
+      {/* <Text>Sale! Sale! We have produce and custom tasks!</Text> */}
+      <PageHeader title='Shop' />
       <ScrollView style={styles.ingredients}>
         {allIngredients}
       </ScrollView>
@@ -23,7 +25,7 @@ const Shop = () => {
 
 const styles = StyleSheet.create({
   ingredients: {
-    marginBottom: 30
+    marginBottom: 60
   }
 })
 
