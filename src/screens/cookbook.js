@@ -1,5 +1,6 @@
 import React from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import PageHeader from '../components/PageHeader'
 import Recipe from '../components/Recipe'
 import Recipes from '../data/recipes2.json'
 
@@ -13,6 +14,7 @@ const Cookbook = () => {
 
   return (
     <View>
+      <PageHeader title='Cookbook' />
       {/* <Text>Recipes Owned!</Text> */}
       <ScrollView style={styles.recipes}>
         {allRecipes}
@@ -23,7 +25,7 @@ const Cookbook = () => {
 
 const styles = StyleSheet.create({
   recipes: {
-    marginBottom: 30
+    marginBottom: 60
   }
 })
 

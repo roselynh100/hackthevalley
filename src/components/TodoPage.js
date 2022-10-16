@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { CheckBox } from '@rneui/themed'
 
 const TodoPage = () => {
@@ -10,7 +10,7 @@ const TodoPage = () => {
   const [check5, setCheck5] = useState(false)
 
   return (
-    <View>
+    <View style={styles.checkboxWrapper}>
       <CheckBox 
         title='Exercise'
         checked={check1}
@@ -39,5 +39,11 @@ const TodoPage = () => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  checkboxWrapper: {
+    marginHorizontal: 20
+  }
+})
 
 export default TodoPage

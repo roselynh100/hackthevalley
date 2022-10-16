@@ -2,6 +2,7 @@
 import React, { useState, useContext } from 'react'
 import { Modal, Text, StyleSheet, Pressable, View } from 'react-native'
 import Recipes from '../data/recipes.json'
+import PageHeader from '../components/PageHeader'
 import { rollCurrency } from '../components/context'
 
 const recipes = Recipes
@@ -35,7 +36,8 @@ function Roll() {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Win a new recipe!</Text>
+      {/* <Text>Win a new recipe!</Text> */}
+      <PageHeader title='Roll' />
       <View style={styles.centeredView}>
         <Modal
           animationType="slide"
@@ -115,6 +117,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center"
   }
-});
+})
 
 export default Roll;

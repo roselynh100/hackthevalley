@@ -1,13 +1,17 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import PageHeader from '../components/PageHeader'
 import TodoPage from '../components/TodoPage'
 
-export default function Tasks() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Tasks to do!!!</Text>
-        <Text>Wah to someone!</Text>
-        <TodoPage />
-      </View>
-    );
-  }
+const Tasks = () => {
+  return (
+    <View>
+      <PageHeader title='Tasks' />
+      {/* <Text>Tasks to do!!!</Text>
+      <Text>Wah to someone!</Text> */}
+      <TodoPage />
+    </View>
+  )
+}
+
+export default Tasks
