@@ -2,8 +2,8 @@
 import React, { useState, useContext } from 'react'
 import { Modal, Text, StyleSheet, Pressable, View } from 'react-native'
 import Recipes from '../data/recipes.json'
-import PageHeader from '../components/PageHeader'
 import { rollCurrency } from '../components/context'
+import storage from '../data/storage'
 
 const recipes = Recipes
 
@@ -15,11 +15,15 @@ function Roll() {
   const [modalVisible, setModalVisible] = useState(false)
   const [recipeNumber, setRecipeNumber] = useState(0)
   const [rollCur, setRollCur] = useContext(rollCurrency)
-  const [disabled, setDisabled] = useState(false)
 
   function choose() {
     if (rollCur > 0) {
       number = random()
+      storage.save({
+        key: recipes.recipes[number]?.name,
+        data: {
+        }
+      })
       return number
     } else {
       return 0
@@ -36,8 +40,7 @@ function Roll() {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {/* <Text>Win a new recipe!</Text> */}
-      <PageHeader title='Roll' />
+      <Text>Win a new recipe!</Text>
       <View style={styles.centeredView}>
         <Modal
           animationType="slide"
@@ -46,7 +49,7 @@ function Roll() {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text>You received the recipe for {recipes.recipes[recipeNumber]}!</Text>
+              <Text>You received the recipe for {recipes.recipes[recipeNumber]?.name}!</Text>
               <Pressable
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => setModalVisible(!modalVisible)}
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
   },
   buttonOpen: {
     backgroundColor: "purple",
-    marginBottom: 100
+    marginBottom: 50
   },
   buttonClose: {
     backgroundColor: "#2196F3",
@@ -117,6 +120,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center"
   }
-})
+});
 
 export default Roll;

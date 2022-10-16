@@ -2,7 +2,7 @@ import React from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import PageHeader from '../components/PageHeader'
 import Recipe from '../components/Recipe'
-import Recipes from '../data/recipes2.json'
+import Recipes from '../data/recipes.json'
 
 const Cookbook = () => {
 

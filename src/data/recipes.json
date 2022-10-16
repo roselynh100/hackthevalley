@@ -1,5 +1,36 @@
 {
-    "recipes": [
-        "Salmon Sushi", "Pho", "Curry", "Oxtail", "Butter Chicken", "Escargot", "Boeuf Bourguignon", "Carbonara"
-    ]
+  "recipes": [
+    { "name": "Salmon Sushi",
+      "image": "https://izzycooking.com/wp-content/uploads/2020/10/Salmon-Nigiri-thumbnail-500x500.jpg",
+      "info": "Contrary to popular belief, salmon sushi does not originate from Japan. Prior to the 1990s, salmon was a fish only used in cheap Japanese meals, and was never eaten raw due to fear of infections from parasites. Only after a project by the Norwegians – who were commercial salmon farming and needed customers – did raw salmon start to catch on in Japan."
+    },
+    { "name": "Pho",
+      "image": "https://www.inspiredtaste.net/wp-content/uploads/2016/06/Vietnamese-Pho-Soup-Recipe-1.jpg",
+      "info": "Pho was invented in Vietnam, in the early 20th Century, during French colonial times. Its origin is likely to be a mix of a French beef and vegetable stew (pot-au-feu), as well as Chinese beef with noodles (牛肉粉). Today, it is Vietnam’s national dish."
+    },
+    { "name": "Curry",
+      "image": "https://www.allrecipes.com/thmb/j-UIY1oXZZWisuG5e5tRitsOvIs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/212721-Indian-Chicken-Curry-Murgh-Kari-mfs_005-8570fd9bcab845519550c6ff5c71e213.jpg",
+      "info": ""
+    },
+    { "name": "Oxtail Stew",  
+      "image": "https://food-images.files.bbci.co.uk/food/recipes/oxtail_stew_91956_16x9.jpg",
+      "info": ""
+    },
+    { "name": "Butter Chicken",
+      "image": "https://www.recipetineats.com/wp-content/uploads/2019/01/Butter-Chicken_5-SQ.jpg",
+      "info": ""
+    },
+    { "name": "Escargot",
+      "image": "https://assets.epicurious.com/photos/57a8adfbb10b4fb03f234f37/master/pass/escargots-a-la-bourguignonne.jpg",
+      "info": ""
+    },
+    { "name": "Boeuf Bourguignon",
+      "image": "https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg",
+      "info": ""
+    },
+    { "name": "Carbonara",
+      "image": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-articleLarge-v2.jpg",
+      "info": "Carbonara was invented as a celebration of a town’s freedom. In attendance of the banquet were many in power, however there were few ingredients available – mosty army rations, barely any fresh produce, and just a bit of meat. Wanting to fuse Italian and Anglo-Saxon cuisine, carbonara alla spaghetti was created."
+    }
+  ]
 }
