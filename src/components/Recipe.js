@@ -12,14 +12,14 @@ const Recipe = (props) => {
     key: props.name
   })
     .then(ret => {
-      console.log('ret:', ret)
+      console.log('sldkfjlsdjfsd')
       if (ret) {
         setUnlocked(true)
         console.log('setting unlocked for', props.name)
       }
     })
     .catch(err => {
-      // console.warn(err.message)
+      console.warn(err.message)
     })
 
   return (
