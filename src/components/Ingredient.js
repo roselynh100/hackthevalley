@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Animated, Image, StyleSheet, Text, View } from 'react-native'
+import { Animated, StyleSheet, Text, View } from 'react-native'
 import { Button, Card } from '@rneui/themed'
 import storage from '../data/storage'
 

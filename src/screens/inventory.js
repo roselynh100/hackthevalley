@@ -7,5 +7,5 @@ export default function Inventory() {
         <Text>Ingredients Owned!</Text>
         <Text>Dishes Owned!</Text>
       </View>
-    );
+    )
   }
