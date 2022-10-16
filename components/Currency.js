@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Chip, withTheme } from '@rneui/themed'
+import { Chip } from '@rneui/themed'
 
 const Currency = () => {
 
@@ -19,11 +19,10 @@ const styles = StyleSheet.create({
   chipContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 30
-  },
-  chip: {
-    padding: '2px'
-  }
+    justifyContent: 'space-between',
+    width: 160,
+    paddingVertical: 20
+    }
 })
 
 export default Currency
