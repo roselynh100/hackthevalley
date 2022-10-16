@@ -1,26 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button, Modal, Pressable, StyleSheet, Text, View } from 'react-native'
 import { Card } from '@rneui/themed'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import storage from '../data/storage'
+import { rollCurrency } from '../components/context'
 
 const Recipe = (props) => {
   const [unlocked, setUnlocked] = useState(false)
   const [modalVisible, setModalVisible] = useState(false)
+  const [rollCur, setRollCur] = useContext(rollCurrency)
 
-  storage.load({
-    key: props.name
-  })
-    .then(ret => {
-      console.log('sldkfjlsdjfsd')
-      if (ret.unlocked) {
-        setUnlocked(true)
-        console.log('setting unlocked for', props.name)
-      }
+  useEffect(() => {
+    storage.load({
+      key: props.name
     })
-    .catch(err => {
-      console.warn(err.message)
-    })
+      .then(ret => {
+        // console.log('sldkfjlsdjfsd')
+        if (ret.unlocked) {
+          setUnlocked(true)
+          // console.log('setting unlocked for', props.name)
+        }
+      })
+      .catch(err => {
+        console.warn(err.message)
+      })  
+  }, [rollCur])
 
   return (
     <View style={{marginHorizontal: 40}}>

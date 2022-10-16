@@ -12,7 +12,7 @@ function random() {
   return Math.floor(Math.random()*recipes.recipes.length)
 }
 
-function Roll() {
+const Roll = () => {
   const [modalVisible, setModalVisible] = useState(false)
   const [recipeNumber, setRecipeNumber] = useState(0)
   const [rollCur, setRollCur] = useContext(rollCurrency)
@@ -61,21 +61,24 @@ function Roll() {
           </View>
         </View>
       </Modal>
-      <Image source={{uri: 'https://www.pngkey.com/png/full/277-2775656_splash-gumball-machine-regular-gumball-machine-clipart-free.png'}}
+      <Image source={{
+        uri: 'https://www.pngkey.com/png/full/277-2775656_splash-gumball-machine-regular-gumball-machine-clipart-free.png'}}
         style={styles.image} />
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => {setRecipeNumber(choose()), setModalVisible(visible()), rollCur>0 ? setRollCur(rollCur-1) : null}}
-      >
-        <Text style={styles.textStyle}>ROLL</Text>
-      </Pressable>
+      <View style={styles.buttonGroup}>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => {setRecipeNumber(choose()), setModalVisible(visible()), rollCur>0 ? setRollCur(rollCur-1) : null}}
+        >
+          <Text style={styles.textStyle}>ROLL</Text>
+        </Pressable>
       
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => {setRollCur(5)}}
-      >{/* Can remove once a way to get stars is implemented */}
-        <Text style={styles.textStyle}>Add More</Text>
-      </Pressable>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => {setRollCur(5)}}
+        >{/* Can remove once a way to get stars is implemented */}
+          <Text style={styles.textStyle}>Add More</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -108,6 +111,11 @@ const styles = StyleSheet.create({
     margin: 20,
     left: '27%'
   },
+  buttonGroup: {
+    left: '25%',
+    width: 200,
+    marginTop: 10
+  },
   button: {
     borderRadius: 20,
     padding: 10,
@@ -115,7 +123,7 @@ const styles = StyleSheet.create({
   },
   buttonOpen: {
     backgroundColor: "purple",
-    marginBottom: 50
+    marginBottom: 30
   },
   buttonClose: {
     backgroundColor: "#2196F3",
@@ -130,6 +138,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center"
   }
-});
+})
 
-export default Roll;
+export default Roll
