@@ -1,0 +1,24 @@
+{
+  "ingredients": [
+    { "name": "Fish",
+      "image": "https://www.curtze.com/images/salmon-hero.png",
+      "price": "9"
+    },
+    { "name": "Rice",
+      "image": "https://www.freepnglogos.com/uploads/rice-png/rice-traditional-rices-26.png",
+      "price": "2"
+    },
+    { "name": "Noodles",
+      "image": "https://www.nicepng.com/png/full/125-1254230_noodles-png.png",
+      "price": "4"
+    },
+    { "name": "Cheese",
+      "image": "https://i.pinimg.com/originals/b3/77/8e/b3778ed590bc573ecd266d6b7d92d658.png",
+      "price": "4"
+    },
+    { "name": "Eggs",
+      "image": "https://www.pngkey.com/png/full/366-3664942_egg-hens-egg-egg-carton-lots-of-eggs.png",
+      "price": "6"
+    }
+  ]
+}

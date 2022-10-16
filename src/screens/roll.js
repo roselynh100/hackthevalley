@@ -1,34 +1,35 @@
-import React, { useState, useContext } from 'react';
-import { Modal, Text, StyleSheet, Pressable, View } from "react-native";
-import Recipes from '../data/recipes.json';
-import { rollCurrency } from '../components/context';
 
-const recipes = Recipes;
+import React, { useState, useContext } from 'react'
+import { Modal, Text, StyleSheet, Pressable, View } from 'react-native'
+import Recipes from '../data/recipes.json'
+import { rollCurrency } from '../components/context'
 
-function random(){
-  return Math.floor(Math.random()*recipes.recipes.length);
+const recipes = Recipes
+
+function random() {
+  return Math.floor(Math.random()*recipes.recipes.length)
 }
 
 function Roll() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [recipeNumber, setRecipeNumber] = useState(0);
-  const [rollCur, setRollCur] = useContext(rollCurrency);
-  const [disabled, setDisabled] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false)
+  const [recipeNumber, setRecipeNumber] = useState(0)
+  const [rollCur, setRollCur] = useContext(rollCurrency)
+  const [disabled, setDisabled] = useState(false)
 
-  function choose(){
-    if(rollCur > 0){
-      number = random();
-      return number;
-    }else{
-      return 0;
+  function choose() {
+    if (rollCur > 0) {
+      number = random()
+      return number
+    } else {
+      return 0
     }
   }
   
-  function visible(){
-    if(rollCur > 0){
-      return true;
-    }else{
-      return false;
+  function visible() {
+    if (rollCur > 0) {
+      return true
+    } else {
+      return false
     }
   }
 
