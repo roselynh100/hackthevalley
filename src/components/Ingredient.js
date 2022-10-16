@@ -12,34 +12,38 @@ const Ingredient = (props) => {
     key: props.name
   })
     .then(ret => {
-      if (ret.quantity) setQuantity(ret.quantity)
+      // console.log('ret is!!!', ret)
+      if (ret.quantity) {
+        setQuantity(ret.quantity)
+        console.log('new ret quantity is', quantity)
+      }
     })
     .catch(err => {
-      // console.warn(err.message)R
+      console.warn(err.message)
     })
 
-  function fadeInAndOut() {
-    Animated.timing(fadeAnimation, {
-      toValue: 1,
-      duration: 1000,
-      useNativeDriver: true
-    }).start()
-
-    setTimeout(() => {
+    function handleBuy() {
       Animated.timing(fadeAnimation, {
-        toValue: 0,
+        toValue: 1,
         duration: 1000,
         useNativeDriver: true
       }).start()
-    }, 2000)
+  
+      setTimeout(() => {
+        Animated.timing(fadeAnimation, {
+          toValue: 0,
+          duration: 1000,
+          useNativeDriver: true
+        }).start()
+      }, 2000)
 
-    storage.save({
-      key: props.name,
-      data: {
-        quantity: quantity
-      }
-    })
-  }
+      storage.save({
+        key: props.name,
+        data: {
+          quantity: Number(quantity) + 1
+        }
+      })
+    }
 
   return (
     <View>
@@ -56,7 +60,9 @@ const Ingredient = (props) => {
           source={{uri: props.image}}
         />
         <Text style={styles.owned}>Owned: {quantity}</Text>
-        <Button onPress={fadeInAndOut}>{'Buy for $' + props.price}</Button>
+        <Button
+          title={'Buy for $' + props.price}
+          onPress={handleBuy} />
       </Card>
     </View>
   )

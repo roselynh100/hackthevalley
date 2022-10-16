@@ -69,14 +69,14 @@ const Roll = () => {
           style={[styles.button, styles.buttonOpen]}
           onPress={() => {setRecipeNumber(choose()), setModalVisible(visible()), rollCur>0 ? setRollCur(rollCur-1) : null}}
         >
-          <Text style={styles.textStyle}>ROLL</Text>
+          <Text style={styles.textStyle}>Roll for a Recipe</Text>
         </Pressable>
       
         <Pressable
           style={[styles.button, styles.buttonOpen]}
           onPress={() => {setRollCur(5)}}
         >{/* Can remove once a way to get stars is implemented */}
-          <Text style={styles.textStyle}>Add More</Text>
+          <Text style={styles.textStyle}>Get more stars</Text>
         </Pressable>
       </View>
     </View>
