@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import storage from '../data/storage'
 
 const Recipe = (props) => {
-  const [unlocked, setUnlocked] = useState(true)
+  const [unlocked, setUnlocked] = useState(false)
   const [modalVisible, setModalVisible] = useState(false)
 
   storage.load({
@@ -13,7 +13,7 @@ const Recipe = (props) => {
   })
     .then(ret => {
       console.log('sldkfjlsdjfsd')
-      if (ret) {
+      if (ret.unlocked) {
         setUnlocked(true)
         console.log('setting unlocked for', props.name)
       }

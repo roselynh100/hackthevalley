@@ -11,7 +11,7 @@ const Currency = () => {
   return (
     <View style={styles.chipWrapper}>
       <View style={styles.chipContainer}>
-        <Chip title={rollCur  + ' Stars'} style={styles.chip} />
+        <Chip title={rollCur  + ' Stars'} />
         <Chip title={Money.coinNum + ' Coins'} />
       </View>
     </View>
