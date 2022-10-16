@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { Modal, Text, StyleSheet, Pressable, View } from "react-native";
-import Recipes from '../data/recipes.json';
+import React, { useState } from 'react'
+import { Modal, Text, StyleSheet, Pressable, View } from "react-native"
+import Recipes from '../data/recipes.json'
 
 const recipes = Recipes;
 
 function random(){
-  return Math.floor(Math.random()*recipes.recipes.length);
+  return Math.floor(Math.random()*recipes.recipes.length)
 }
 
 function choose(){
   //remember to put if statement where if moneys are high enough we good
-  number = random();
-  return number;
+  number = random()
+  return number
 }
 
 function Roll() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [recipeNumber, setRecipeNumber] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false)
+  const [recipeNumber, setRecipeNumber] = useState(0)
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Win a new recipe!</Text>

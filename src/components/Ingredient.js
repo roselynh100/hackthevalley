@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Animated, StyleSheet, Text, View } from 'react-native'
 import { Button, Card } from '@rneui/themed'
 import storage from '../data/storage'
@@ -6,22 +6,16 @@ import storage from '../data/storage'
 const Ingredient = (props) => {
 
   const fadeAnimation = new Animated.Value(0)
-  const [quantity, setQuantity] = useState('')
+  const [quantity, setQuantity] = useState(0)
 
   storage.load({
     key: props.name
   })
     .then(ret => {
-      console.log('quantity is', ret.quantity)
-      if (ret.quantity == null) {
-        setQuantity(0)
-      }
-      else {
-        setQuantity(ret.quantity)
-      }
+      if (ret.quantity) setQuantity(ret.quantity)
     })
     .catch(err => {
-      console.warn(err.message)
+      // console.warn(err.message)
     })
 
   function fadeInAndOut() {
@@ -39,12 +33,10 @@ const Ingredient = (props) => {
       }).start()
     }, 2000)
 
-    console.log('quantity is', quantity)
-
     storage.save({
       key: props.name,
       data: {
-        quantity: quantity + 1
+        quantity: quantity
       }
     })
   }
