@@ -18,7 +18,7 @@ const Shop = () => {
         {allIngredients}
       </ScrollView>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
