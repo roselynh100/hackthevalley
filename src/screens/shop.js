@@ -13,7 +13,7 @@ const Shop = () => {
 
   return (
     <View>
-      <Text>Sale! Sale! We have produce and custom tasks!</Text>
+      {/* <Text>Sale! Sale! We have produce and custom tasks!</Text> */}
       <ScrollView style={styles.ingredients}>
         {allIngredients}
       </ScrollView>

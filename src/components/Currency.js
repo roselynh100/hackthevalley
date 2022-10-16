@@ -2,12 +2,11 @@ import React, { useContext } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Chip } from '@rneui/themed'
 import { rollCurrency } from './context'
-import { Button } from '@rneui/base'
 import Money from '../data/money.json'
 
 const Currency = () => {
 
-  const [rollCur, setRollCur] = useContext(rollCurrency);
+  const [rollCur, setRollCur] = useContext(rollCurrency)
 
   return (
     <View style={styles.chipWrapper}>
