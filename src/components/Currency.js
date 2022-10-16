@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Chip } from '@rneui/themed'
+import { rollCurrency } from './context'
+import { Button } from '@rneui/base'
+import Money from '../data/money.json'
 
 const Currency = () => {
 
-  const starNum = 2
-  const coinNum = 15
+  const [rollCur, setRollCur] = useContext(rollCurrency);
 
   return (
     <View style={styles.chipWrapper}>
       <View style={styles.chipContainer}>
-        <Chip title={starNum + ' Stars'} style={styles.chip} />
-        <Chip title={coinNum + ' Coins'} />
+        <Chip title={rollCur  + ' Stars'} style={styles.chip} />
+        <Chip title={Money.coinNum + ' Coins'} />
       </View>
     </View>
   )

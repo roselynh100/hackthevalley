@@ -6,6 +6,7 @@ export default function Tasks() {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Tasks to do!!!</Text>
         <Text>Wah to someone!</Text>
+        <Text>Under Construction!!!</Text>
       </View>
     );
   }
