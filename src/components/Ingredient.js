@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Animated, Image, StyleSheet, Text, View } from 'react-native'
 import { Button, Card } from '@rneui/themed'
+import storage from '../data/storage'
 
 const Ingredient = (props) => {
 
   const fadeAnimation = new Animated.Value(0)
+  const [quantity, setQuantity] = useState('')
+
+  storage.load({
+    key: props.name
+  })
+    .then(ret => {
+      console.log('quantity is', ret.quantity)
+      if (ret.quantity == null) {
+        setQuantity(0)
+      }
+      else {
+        setQuantity(ret.quantity)
+      }
+    })
+    .catch(err => {
+      console.warn(err.message)
+    })
 
   function fadeInAndOut() {
     Animated.timing(fadeAnimation, {
@@ -12,6 +30,7 @@ const Ingredient = (props) => {
       duration: 1000,
       useNativeDriver: true
     }).start()
+
     setTimeout(() => {
       Animated.timing(fadeAnimation, {
         toValue: 0,
@@ -19,6 +38,15 @@ const Ingredient = (props) => {
         useNativeDriver: true
       }).start()
     }, 2000)
+
+    console.log('quantity is', quantity)
+
+    storage.save({
+      key: props.name,
+      data: {
+        quantity: quantity + 1
+      }
+    })
   }
 
   return (
@@ -35,7 +63,7 @@ const Ingredient = (props) => {
           style={styles.image}
           source={{uri: props.image}}
         />
-        <Text style={styles.owned}>Owned: {props.owned}</Text>
+        <Text style={styles.owned}>Owned: {quantity}</Text>
         <Button onPress={fadeInAndOut}>{'Buy for $' + props.price}</Button>
       </Card>
     </View>
